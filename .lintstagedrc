@@ -1,0 +1,3 @@
+{
+  "**/*.php": ["composer code:analyze", "composer style:check"]
+}
