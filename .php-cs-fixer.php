@@ -6,7 +6,7 @@ use PhpCsFixer\Config;
 use PhpCsFixer\Finder;
 
 // Lê o pint.json para usar as mesmas regras no PHP-CS-Fixer
-$pintConfig = json_decode(file_get_contents(__DIR__ . '/pint.json'), true);
+$pint = json_decode((string) file_get_contents(__DIR__ . '/pint.json'), true);
 
 $finder = Finder::create()
     ->in([
@@ -24,7 +24,10 @@ $finder = Finder::create()
     ->ignoreDotFiles(true)
     ->ignoreVCS(true);
 
-return (new Config())
-    ->setRiskyAllowed(true) // Permite regras "risky" como declare_strict_types
+return (new Config)
     ->setFinder($finder)
-    ->setRules($pintConfig['rules'] ?? []);
+    ->setRules([
+        '@PSR12' => true,
+        ...$pint['rules'],
+    ])
+    ->setRiskyAllowed(true); // Permite regras "risky" como declare_strict_types
