@@ -1,12 +1,19 @@
 {
     "$schema": "https://getcomposer.org/schema.json",
-    "name": "laravel/laravel",
+    "name": "tonegabes/filampac",
     "type": "project",
-    "description": "The skeleton application for the Laravel framework.",
-    "keywords": ["laravel", "framework"],
+    "description": "The skeleton application for the MPs",
+    "keywords": [
+        "laravel",
+        "framework",
+        "mpac",
+        "filament",
+        "tonegabes"
+    ],
     "license": "MIT",
     "require": {
         "php": "^8.2",
+        "filament/filament": "~4.0",
         "laravel/framework": "^12.0",
         "laravel/tinker": "^2.10.1"
     },
@@ -15,9 +22,15 @@
         "laravel/pail": "^1.2.2",
         "laravel/pint": "^1.13",
         "laravel/sail": "^1.41",
+        "larastan/larastan": "^3.0",
+        "friendsofphp/php-cs-fixer": "^3.59",
+        "phpstan/phpstan-deprecation-rules": "^2.0",
         "mockery/mockery": "^1.6",
         "nunomaduro/collision": "^8.6",
-        "phpunit/phpunit": "^11.5.3"
+        "phpunit/phpunit": "^11.5.3",
+        "pestphp/pest": "^3.8",
+        "pestphp/pest-plugin-faker": "^3.0",
+        "pestphp/pest-plugin-laravel": "^3.2"
     },
     "autoload": {
         "psr-4": {
@@ -32,6 +45,15 @@
         }
     },
     "scripts": {
+        "style:check": [
+            "pint --test --no-interaction --ansi"
+        ],
+        "style:fix": [
+            "pint --no-interaction --ansi"
+        ],
+        "code:analyze": [
+            "phpstan analyze --memory-limit=4G --no-progress --no-interaction --ansi"
+        ],
         "post-autoload-dump": [
             "@php artisan config:clear",
             "@php artisan clear-compiled",
@@ -47,6 +69,9 @@
             "@php artisan key:generate --ansi",
             "@php -r \"file_exists('database/database.sqlite') || touch('database/database.sqlite');\"",
             "@php artisan migrate --graceful --ansi"
+        ],
+        "fresh:db": [
+            "@php artisan migrate:fresh --seed"
         ],
         "dev": [
             "Composer\\Config::disableProcessTimeout",

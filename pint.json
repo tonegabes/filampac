@@ -1,0 +1,123 @@
+{
+  "preset": "laravel",
+  "rules": {
+    "align_multiline_comment": true,
+    "array_indentation": true,
+    "array_syntax": { "syntax": "short" },
+    "binary_operator_spaces": {
+      "default": "at_least_single_space",
+      "operators": {
+        "=>": "align_single_space_minimal",
+        "=": "single_space"
+      }
+    },
+    "blank_line_after_namespace": true,
+    "blank_line_after_opening_tag": true,
+    "blank_line_before_statement": {
+      "statements": ["return", "throw", "try", "if", "for", "foreach", "while"]
+    },
+    "blank_line_between_import_groups": true,
+    "braces_position": {
+      "control_structures_opening_brace": "same_line",
+      "functions_opening_brace": "next_line_unless_newline_at_signature_end",
+      "anonymous_functions_opening_brace": "same_line",
+      "classes_opening_brace": "next_line_unless_newline_at_signature_end",
+      "anonymous_classes_opening_brace": "next_line_unless_newline_at_signature_end",
+      "allow_single_line_empty_anonymous_classes": false,
+      "allow_single_line_anonymous_functions": false
+    },
+    "cast_spaces": true,
+    "class_attributes_separation": {
+      "elements": {
+        "method": "one",
+        "property": "one",
+        "const": "one",
+        "trait_import": "none"
+      }
+    },
+    "class_definition": {
+      "multi_line_extends_each_single_line": true,
+      "single_item_single_line": true,
+      "single_line": true,
+      "space_before_parenthesis": true
+    },
+    "class_reference_name_casing": true,
+    "combine_consecutive_issets": true,
+    "combine_consecutive_unsets": true,
+    "compact_nullable_type_declaration": true,
+    "concat_space": { "spacing": "one" },
+    "constant_case": true,
+    "declare_strict_types": true,
+    "explicit_string_variable": true,
+    "fully_qualified_strict_types": true,
+    "heredoc_to_nowdoc": true,
+    "increment_style": true,
+    "lowercase_cast": true,
+    "magic_constant_casing": true,
+    "magic_method_casing": true,
+    "method_argument_space": {
+      "on_multiline": "ensure_fully_multiline",
+      "keep_multiple_spaces_after_comma": false
+    },
+    "method_chaining_indentation": true,
+    "native_type_declaration_casing": true,
+    "no_blank_lines_after_class_opening": true,
+    "no_blank_lines_after_phpdoc": true,
+    "no_empty_comment": true,
+    "no_empty_phpdoc": true,
+    "no_extra_blank_lines": {
+      "tokens": [
+        "extra",
+        "throw",
+        "use",
+        "return",
+        "continue",
+        "break",
+        "case",
+        "default"
+      ]
+    },
+    "no_null_property_initialization": true,
+    "no_superfluous_phpdoc_tags": {
+      "allow_mixed": true,
+      "remove_inheritdoc": false,
+      "allow_unused_params": true
+    },
+    "no_unused_imports": true,
+    "no_useless_concat_operator": true,
+    "no_useless_return": true,
+    "no_whitespace_before_comma_in_array": true,
+    "nullable_type_declaration": true,
+    "nullable_type_declaration_for_default_null_value": true,
+    "ordered_imports": {
+      "imports_order": ["class", "function", "const"],
+      "sort_algorithm": "alpha"
+    },
+    "ordered_types": true,
+    "phpdoc_align": {
+      "align": "left",
+      "tags": ["param", "property", "return", "throws", "type", "var"]
+    },
+    "phpdoc_order": { "order": ["param", "throws", "return"] },
+    "phpdoc_scalar": true,
+    "phpdoc_separation": true,
+    "phpdoc_trim": true,
+    "phpdoc_trim_consecutive_blank_line_separation": true,
+    "phpdoc_types_order": {
+      "null_adjustment": "always_last",
+      "sort_algorithm": "none"
+    },
+    "return_type_declaration": true,
+    "short_scalar_cast": true,
+    "single_class_element_per_statement": { "elements": ["property", "const"] },
+    "single_import_per_statement": true,
+    "single_line_after_imports": true,
+    "single_line_comment_spacing": true,
+    "ternary_operator_spaces": true,
+    "trim_array_spaces": true,
+    "type_declaration_spaces": true,
+    "unary_operator_spaces": true,
+    "whitespace_after_comma_in_array": true,
+    "yoda_style": false
+  }
+}

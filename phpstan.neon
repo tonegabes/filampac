@@ -1,0 +1,22 @@
+includes:
+    - vendor/larastan/larastan/extension.neon
+
+parameters:
+
+    paths:
+        - app/
+        - database/
+        - resources/
+        - routes/
+
+    # Level 10 is the highest level
+    level: 9
+
+    ignoreErrors:
+#        - '#Trait .* is used zero times and is not analysed#'
+
+    excludePaths:
+
+#        - ./*/*/FileToBeExcluded.php
+#
+#    checkMissingIterableValueType: false
