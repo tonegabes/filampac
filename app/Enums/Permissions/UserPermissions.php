@@ -6,6 +6,7 @@ namespace App\Enums\Permissions;
 
 enum UserPermissions: string
 {
+    case All = 'users';
     case View = 'users.view';
     case Create = 'users.create';
     case Update = 'users.update';

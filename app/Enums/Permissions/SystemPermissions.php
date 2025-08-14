@@ -6,6 +6,7 @@ namespace App\Enums\Permissions;
 
 enum SystemPermissions: string
 {
-    case PanelsViewAll = 'system.panels.view';
+    case PanelsAll = 'system.panels';
     case PanelsViewAdmin = 'system.panels.view.admin';
+    case PanelsViewOperator = 'system.panels.view.operator';
 }
