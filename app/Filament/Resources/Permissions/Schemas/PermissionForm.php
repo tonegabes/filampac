@@ -2,7 +2,9 @@
 
 namespace App\Filament\Resources\Permissions\Schemas;
 
+use Filament\Forms\Components\CheckboxList;
 use Filament\Forms\Components\TextInput;
+use Filament\Schemas\Components\Section;
 use Filament\Schemas\Schema;
 
 class PermissionForm
@@ -10,11 +12,23 @@ class PermissionForm
     public static function configure(Schema $schema): Schema
     {
         return $schema
-            ->components([
+            ->schema([
                 TextInput::make('name')
-                    ->required(),
-                TextInput::make('guard_name')
-                    ->required(),
-            ]);
+                    ->required()
+                    ->maxLength(255)
+                    ->maxWidth('md')
+                    ->label('Nome'),
+
+                Section::make('Perfis Associados')
+                    ->description('Selecione os perfis associados a essa permissão.')
+                    ->schema([
+                        CheckboxList::make('roles')
+                            ->hiddenLabel()
+                            ->relationship('roles', 'name')
+                            ->searchable()
+                            ->bulkToggleable()
+                            ->columns(3),
+                    ]),
+            ])->columns(1);
     }
 }

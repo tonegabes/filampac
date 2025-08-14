@@ -16,12 +16,18 @@ class PermissionsTable
             ->columns([
                 TextColumn::make('name')
                     ->searchable(),
-                TextColumn::make('guard_name')
-                    ->searchable(),
+
+                TextColumn::make('roles.name')
+                    ->label('Perfis Associados')
+                    ->badge()
+                    ->wrap()
+                    ->color('info'),
+
                 TextColumn::make('created_at')
                     ->dateTime()
                     ->sortable()
                     ->toggleable(isToggledHiddenByDefault: true),
+
                 TextColumn::make('updated_at')
                     ->dateTime()
                     ->sortable()

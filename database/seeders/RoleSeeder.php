@@ -32,7 +32,6 @@ final class RoleSeeder extends Seeder
 
         $roleOperator->syncPermissions([
             SystemPermissions::PanelsViewOperator,
-            ...UserPermissions::cases(),
         ]);
     }
 }

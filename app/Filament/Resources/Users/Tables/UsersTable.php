@@ -16,32 +16,48 @@ class UsersTable
         return $table
             ->columns([
                 TextColumn::make('name')
+                    ->label('Nome')
                     ->searchable(),
+
                 TextColumn::make('username')
-                    ->searchable(),
+                    ->label('Usuário')
+                    ->searchable()
+                    ->toggleable(isToggledHiddenByDefault: true),
+
                 TextColumn::make('email')
-                    ->label('Email address')
                     ->searchable(),
-                TextColumn::make('email_verified_at')
-                    ->dateTime()
-                    ->sortable(),
+
+                TextColumn::make('roles.name')
+                    ->label('Perfis')
+                    ->badge()
+                    ->color('info'),
+
                 IconColumn::make('is_active')
+                    ->label('Ativo')
+                    ->alignCenter()
                     ->boolean(),
+
                 TextColumn::make('created_at')
                     ->dateTime()
                     ->sortable()
                     ->toggleable(isToggledHiddenByDefault: true),
+
                 TextColumn::make('updated_at')
                     ->dateTime()
                     ->sortable()
                     ->toggleable(isToggledHiddenByDefault: true),
+
                 TextColumn::make('created_by')
                     ->numeric()
-                    ->sortable(),
+                    ->sortable()
+                    ->toggleable(isToggledHiddenByDefault: true),
+
                 TextColumn::make('updated_by')
                     ->numeric()
-                    ->sortable(),
+                    ->sortable()
+                    ->toggleable(isToggledHiddenByDefault: true),
             ])
+            ->paginationPageOptions([50, 100])
             ->filters([
                 //
             ])

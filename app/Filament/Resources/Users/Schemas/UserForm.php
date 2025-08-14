@@ -2,9 +2,10 @@
 
 namespace App\Filament\Resources\Users\Schemas;
 
-use Filament\Forms\Components\DateTimePicker;
+use Filament\Forms\Components\CheckboxList;
 use Filament\Forms\Components\TextInput;
-use Filament\Forms\Components\Toggle;
+use Filament\Forms\Components\ToggleButtons;
+use Filament\Schemas\Components\Section;
 use Filament\Schemas\Schema;
 
 class UserForm
@@ -13,24 +14,41 @@ class UserForm
     {
         return $schema
             ->components([
-                TextInput::make('name')
-                    ->required(),
-                TextInput::make('username')
-                    ->required(),
-                TextInput::make('email')
-                    ->label('Email address')
-                    ->email()
-                    ->required(),
-                DateTimePicker::make('email_verified_at'),
-                TextInput::make('password')
-                    ->password()
-                    ->required(),
-                Toggle::make('is_active')
-                    ->required(),
-                TextInput::make('created_by')
-                    ->numeric(),
-                TextInput::make('updated_by')
-                    ->numeric(),
-            ]);
+                Section::make('Dados Pessoais')
+                    ->columns(2)
+                    ->columnSpanFull()
+                    ->schema([
+                        TextInput::make('name')
+                            ->label('Nome')
+                            ->maxLength(255)
+                            ->required(),
+
+                        TextInput::make('email')
+                            ->email()
+                            ->maxLength(255)
+                            ->required(),
+
+                        TextInput::make('username')
+                            ->maxLength(255)
+                            ->required(),
+
+                        ToggleButtons::make('is_active')
+                            ->label('Ativo')
+                            ->boolean()
+                            ->inline()
+                            ->required(),
+                    ]),
+
+                Section::make('Perfis')
+                    ->columnSpanFull()
+                    ->description('Selecione os perfis associados a esse usuário.')
+                    ->schema([
+                        CheckboxList::make('roles')
+                            ->hiddenLabel()
+                            ->relationship('roles', 'name')
+                            ->required(),
+                    ]),
+
+            ])->columns(2);
     }
 }

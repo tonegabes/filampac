@@ -2,6 +2,7 @@
 
 namespace App\Filament\Resources\Permissions;
 
+use App\Enums\NavGroups;
 use App\Filament\Resources\Permissions\Pages\CreatePermission;
 use App\Filament\Resources\Permissions\Pages\EditPermission;
 use App\Filament\Resources\Permissions\Pages\ListPermissions;
@@ -11,16 +12,24 @@ use App\Models\Permission;
 use BackedEnum;
 use Filament\Resources\Resource;
 use Filament\Schemas\Schema;
-use Filament\Support\Icons\Heroicon;
 use Filament\Tables\Table;
 
 class PermissionResource extends Resource
 {
     protected static ?string $model = Permission::class;
 
-    protected static string|BackedEnum|null $navigationIcon = Heroicon::OutlinedRectangleStack;
+    protected static string|BackedEnum|null $navigationIcon = 'phosphor-user-circle-check';
+
+    protected static ?string $modelLabel = 'Permissão';
+
+    protected static ?string $pluralModelLabel = 'Permissões';
 
     protected static ?string $recordTitleAttribute = 'name';
+
+    public static function getNavigationGroup(): string
+    {
+        return NavGroups::Authorization->value;
+    }
 
     public static function form(Schema $schema): Schema
     {
