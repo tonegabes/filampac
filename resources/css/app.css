@@ -1,5 +1,6 @@
 @import "tailwindcss";
 @import "../../vendor/filament/filament/resources/css/theme.css";
+@import "./overrides.css";
 
 @source '../../app/Filament/**/*';
 @source '../../resources/views/filament/**/*';
@@ -16,6 +17,8 @@
   --font-serif: "Crimson Pro", ui-serif, Georgia, Cambria, "Times New Roman",
     Times, serif;
   --font-mono: "IBM Plex Mono", ui-monospace, SFMono-Regular, Menlo, Monaco;
+
+  --border-color-base: var(--color-gray-200);
 }
 
 @base {
