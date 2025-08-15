@@ -113,4 +113,24 @@ return [
 
     'password_timeout' => env('AUTH_PASSWORD_TIMEOUT', 10800),
 
+    /*
+    |--------------------------------------------------------------------------
+    | Default User Role
+    |--------------------------------------------------------------------------
+    */
+
+    'default_role' => App\Enums\Roles::Operator,
+
+    /*
+    |--------------------------------------------------------------------------
+    | Uses Ldap Authentication
+    |--------------------------------------------------------------------------
+    */
+
+    'ldap' => [
+        'enabled'        => env('LDAP_AUTH_ENABLED', false),
+        'requires_local' => env('LDAP_AUTH_REQUIRES_LOCAL', false),
+        'email_domain'   => env('LDAP_AUTH_EMAIL_DOMAIN', '@mpac.mp.br'),
+    ],
+
 ];
