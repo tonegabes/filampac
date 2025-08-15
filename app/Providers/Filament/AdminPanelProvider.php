@@ -33,6 +33,7 @@ class AdminPanelProvider extends PanelProvider
             ->colors([
                 'primary' => Color::Indigo,
             ])
+            ->viteTheme('resources/css/app.css')
             ->discoverResources(
                 in: app_path('Filament/Resources'),
                 for: 'App\Filament\Resources'
