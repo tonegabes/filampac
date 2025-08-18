@@ -4,6 +4,7 @@ namespace App\Providers\Filament;
 
 use App\Enums\NavGroups;
 use App\Filament\Pages\Auth\Login;
+use App\Filament\Pages\Auth\Register;
 use Filament\Http\Middleware\Authenticate;
 use Filament\Http\Middleware\AuthenticateSession;
 use Filament\Http\Middleware\DisableBladeIconComponents;
@@ -31,6 +32,7 @@ class AdminPanelProvider extends PanelProvider
             ->id('admin')
             ->path('admin')
             ->login(Login::class)
+            ->registration(Register::class)
             ->profile()
             ->colors([
                 'primary' => Color::Indigo,

@@ -25,9 +25,9 @@ use LdapRecord\Models\ActiveDirectory\User as LdapUser;
 
 class Login extends VendorLogin
 {
-    // protected string $view = 'filament.pages.auth.login';
+    protected static string $layout = 'layouts.auth';
 
-    // protected static string $layout = 'layouts.auth';
+    protected string $view = 'filament.pages.auth.login';
 
     private LdapAuthService $ldapAuthService;
 
@@ -38,6 +38,8 @@ class Login extends VendorLogin
     public function __construct()
     {
         $this->isLdapEnabled = Config::boolean('auth.ldap.enabled', false);
+
+        dd();
 
         if ($this->isLdapEnabled) {
             $this->ldapAuthService = new LdapAuthService;
