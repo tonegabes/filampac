@@ -56,7 +56,6 @@ class Login extends VendorLogin
         }
 
         /** @var array<string, string> $data */
-
         $data = $this->form->getState();
 
         if ($this->isLdapEnabled) {
