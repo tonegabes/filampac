@@ -39,8 +39,6 @@ class Login extends VendorLogin
     {
         $this->isLdapEnabled = Config::boolean('auth.ldap.enabled', false);
 
-        dd();
-
         if ($this->isLdapEnabled) {
             $this->ldapAuthService = new LdapAuthService;
             $this->ldapUserService = new LdapUserService;

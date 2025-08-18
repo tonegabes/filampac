@@ -2,6 +2,7 @@
 
 namespace App\Providers\Filament;
 
+use Agencetwogether\HooksHelper\HooksHelperPlugin;
 use App\Enums\NavGroups;
 use App\Filament\Pages\Auth\Login;
 use App\Filament\Pages\Auth\Register;
@@ -74,6 +75,9 @@ class AdminPanelProvider extends PanelProvider
             ])
             ->authMiddleware([
                 Authenticate::class,
+            ])
+            ->plugins([
+                HooksHelperPlugin::make(),
             ]);
     }
 }
