@@ -11,19 +11,19 @@ final class BaseIconsProvider extends ServiceProvider
     public function register(): void
     {
         FilamentIcon::register([
-            SupportIconAlias::BADGE_DELETE_BUTTON => 'badge.delete-button',
-            SupportIconAlias::BREADCRUMBS_SEPARATOR => 'breadcrumbs.separator',
-            SupportIconAlias::BREADCRUMBS_SEPARATOR_RTL => 'breadcrumbs.separator.rtl',
-            SupportIconAlias::MODAL_CLOSE_BUTTON => 'modal.close-button',
-            SupportIconAlias::PAGINATION_FIRST_BUTTON => 'pagination.first-button',
-            SupportIconAlias::PAGINATION_FIRST_BUTTON_RTL => 'pagination.first-button.rtl',
-            SupportIconAlias::PAGINATION_LAST_BUTTON => 'pagination.last-button',
-            SupportIconAlias::PAGINATION_LAST_BUTTON_RTL => 'pagination.last-button.rtl',
-            SupportIconAlias::PAGINATION_NEXT_BUTTON => 'pagination.next-button',
-            SupportIconAlias::PAGINATION_NEXT_BUTTON_RTL => 'pagination.next-button.rtl',
-            SupportIconAlias::PAGINATION_PREVIOUS_BUTTON => 'pagination.previous-button',
-            SupportIconAlias::PAGINATION_PREVIOUS_BUTTON_RTL => 'pagination.previous-button.rtl',
-            SupportIconAlias::SECTION_COLLAPSE_BUTTON => 'section.collapse-button',
+            SupportIconAlias::BADGE_DELETE_BUTTON            => 'phosphor-trash',
+            SupportIconAlias::BREADCRUMBS_SEPARATOR          => 'phosphor-arrow-right',
+            SupportIconAlias::BREADCRUMBS_SEPARATOR_RTL      => 'phosphor-arrow-left',
+            SupportIconAlias::MODAL_CLOSE_BUTTON             => 'phosphor-x',
+            SupportIconAlias::PAGINATION_FIRST_BUTTON        => 'phosphor-caret-line-left',
+            SupportIconAlias::PAGINATION_FIRST_BUTTON_RTL    => 'phosphor-caret-line-left',
+            SupportIconAlias::PAGINATION_LAST_BUTTON         => 'phosphor-caret-line-right',
+            SupportIconAlias::PAGINATION_LAST_BUTTON_RTL     => 'phosphor-caret-line-right',
+            SupportIconAlias::PAGINATION_NEXT_BUTTON         => 'phosphor-caret-right',
+            SupportIconAlias::PAGINATION_NEXT_BUTTON_RTL     => 'phosphor-caret-left',
+            SupportIconAlias::PAGINATION_PREVIOUS_BUTTON     => 'phosphor-caret-left',
+            SupportIconAlias::PAGINATION_PREVIOUS_BUTTON_RTL => 'phosphor-caret-right',
+            SupportIconAlias::SECTION_COLLAPSE_BUTTON        => 'phosphor-caret-circle-down',
         ]);
     }
 }
