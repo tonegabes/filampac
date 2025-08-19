@@ -21,7 +21,6 @@
     "spatie/laravel-permission": "^6.21"
   },
   "require-dev": {
-    "agencetwogether/hookshelper": "^0.0.2",
     "fakerphp/faker": "^1.23",
     "friendsofphp/php-cs-fixer": "^3.86",
     "laradumps/laradumps": "4.0",
