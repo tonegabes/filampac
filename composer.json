@@ -23,7 +23,7 @@
   "require-dev": {
     "agencetwogether/hookshelper": "^0.0.2",
     "fakerphp/faker": "^1.23",
-    "friendsofphp/php-cs-fixer": "^3.85",
+    "friendsofphp/php-cs-fixer": "^3.86",
     "laradumps/laradumps": "4.0",
     "larastan/larastan": "^3.0",
     "laravel/boost": "^1.0",
