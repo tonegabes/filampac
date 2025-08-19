@@ -1,1 +1,1 @@
-<x-head-fonts />
+<x-head.fonts />
