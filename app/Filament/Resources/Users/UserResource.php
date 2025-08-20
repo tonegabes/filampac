@@ -2,6 +2,7 @@
 
 namespace App\Filament\Resources\Users;
 
+use App\Enums\Icons\Phosphor;
 use App\Enums\NavGroups;
 use App\Filament\Resources\Users\Pages\CreateUser;
 use App\Filament\Resources\Users\Pages\EditUser;
@@ -20,7 +21,7 @@ class UserResource extends Resource
 
     protected static ?string $modelLabel = 'Usuário';
 
-    protected static string|BackedEnum|null $navigationIcon = 'phosphor-users';
+    protected static string|BackedEnum|null $navigationIcon = Phosphor::Users;
 
     protected static ?string $recordTitleAttribute = 'name';
 

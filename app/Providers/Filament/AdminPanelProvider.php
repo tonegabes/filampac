@@ -2,6 +2,7 @@
 
 namespace App\Providers\Filament;
 
+use App\Enums\Icons\Phosphor;
 use App\Enums\NavGroups;
 use App\Enums\Permissions\SystemPermissions;
 use App\Filament\Pages\Auth\Login;
@@ -69,7 +70,7 @@ class AdminPanelProvider extends PanelProvider
             ->navigationItems([
                 NavigationItem::make('Log Viewer')
                     ->group(NavGroups::Tools->value)
-                    ->icon('phosphor-scroll')
+                    ->icon(Phosphor::Scroll)
                     ->url('/' . Config::string('log-viewer.route_path'))
                     ->openUrlInNewTab()
                     ->visible(fn () => auth()->user()?->can(SystemPermissions::LogViewerAccess)),

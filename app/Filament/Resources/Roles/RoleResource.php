@@ -2,6 +2,7 @@
 
 namespace App\Filament\Resources\Roles;
 
+use App\Enums\Icons\Phosphor;
 use App\Enums\NavGroups;
 use App\Filament\Resources\Roles\Pages\CreateRole;
 use App\Filament\Resources\Roles\Pages\EditRole;
@@ -22,7 +23,7 @@ class RoleResource extends Resource
 
     protected static ?string $pluralModelLabel = 'Perfis';
 
-    protected static string|BackedEnum|null $navigationIcon = 'phosphor-user-circle';
+    protected static string|BackedEnum|null $navigationIcon = Phosphor::UserCircle;
 
     protected static ?string $recordTitleAttribute = 'name';
 

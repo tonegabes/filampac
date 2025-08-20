@@ -2,6 +2,7 @@
 
 namespace App\Filament\Resources\Permissions;
 
+use App\Enums\Icons\Phosphor;
 use App\Enums\NavGroups;
 use App\Filament\Resources\Permissions\Pages\CreatePermission;
 use App\Filament\Resources\Permissions\Pages\EditPermission;
@@ -18,7 +19,7 @@ class PermissionResource extends Resource
 {
     protected static ?string $model = Permission::class;
 
-    protected static string|BackedEnum|null $navigationIcon = 'phosphor-user-circle-check';
+    protected static string|BackedEnum|null $navigationIcon = Phosphor::UserCircleCheck;
 
     protected static ?string $modelLabel = 'Permissão';
 
