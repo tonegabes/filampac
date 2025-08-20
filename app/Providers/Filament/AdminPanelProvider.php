@@ -3,6 +3,7 @@
 namespace App\Providers\Filament;
 
 use App\Enums\NavGroups;
+use App\Enums\Permissions\SystemPermissions;
 use App\Filament\Pages\Auth\Login;
 use App\Filament\Pages\Auth\Register;
 use Filament\Http\Middleware\Authenticate;
@@ -10,6 +11,7 @@ use Filament\Http\Middleware\AuthenticateSession;
 use Filament\Http\Middleware\DisableBladeIconComponents;
 use Filament\Http\Middleware\DispatchServingFilamentEvent;
 use Filament\Navigation\NavigationGroup;
+use Filament\Navigation\NavigationItem;
 use Filament\Pages\Dashboard;
 use Filament\Panel;
 use Filament\PanelProvider;
@@ -21,6 +23,7 @@ use Illuminate\Cookie\Middleware\EncryptCookies;
 use Illuminate\Foundation\Http\Middleware\VerifyCsrfToken;
 use Illuminate\Routing\Middleware\SubstituteBindings;
 use Illuminate\Session\Middleware\StartSession;
+use Illuminate\Support\Facades\Config;
 use Illuminate\View\Middleware\ShareErrorsFromSession;
 
 class AdminPanelProvider extends PanelProvider
@@ -60,6 +63,16 @@ class AdminPanelProvider extends PanelProvider
             ->navigationGroups([
                 NavigationGroup::make(NavGroups::Authorization->value)
                     ->collapsed(true),
+                NavigationGroup::make(NavGroups::Tools->value)
+                    ->collapsed(true),
+            ])
+            ->navigationItems([
+                NavigationItem::make('Log Viewer')
+                    ->group(NavGroups::Tools->value)
+                    ->icon('phosphor-scroll')
+                    ->url('/' . Config::string('log-viewer.route_path'))
+                    ->openUrlInNewTab()
+                    ->visible(fn () => auth()->user()?->can(SystemPermissions::LogViewerAccess)),
             ])
             ->middleware([
                 EncryptCookies::class,

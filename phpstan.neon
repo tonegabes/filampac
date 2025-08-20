@@ -17,6 +17,7 @@ parameters:
 
     excludePaths:
       - database\migrations\2025_08_13_193244_create_permission_tables.php
+      - config/log-viewer.php
 
 #        - ./*/*/FileToBeExcluded.php
 #

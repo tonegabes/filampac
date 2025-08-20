@@ -10,6 +10,7 @@ use Filament\Support\Contracts\HasLabel;
 enum NavGroups: string implements HasIcon, HasLabel
 {
     case Authorization = 'Autorização';
+    case Tools = 'Ferramentas';
 
     public function getLabel(): string
     {
@@ -19,7 +20,8 @@ enum NavGroups: string implements HasIcon, HasLabel
     public function getIcon(): string
     {
         return match ($this) {
-            self::Authorization => 'heroicon-o-shield-check',
+            self::Authorization => 'phosphor-shield-check',
+            self::Tools         => 'phosphor-gear',
         };
     }
 }

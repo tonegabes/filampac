@@ -3,6 +3,7 @@
 namespace App\Filament\Pages\Auth;
 
 use App\Enums\Roles;
+use App\Models\User;
 use Filament\Auth\Pages\Register as VendorRegister;
 use Illuminate\Database\Eloquent\Model;
 
@@ -17,6 +18,7 @@ class Register extends VendorRegister
      */
     protected function handleRegistration(array $data): Model
     {
+        /** @var User $user */
         $user = $this->getUserModel()::create($data);
         $user->assignRole(Roles::Guest);
 
