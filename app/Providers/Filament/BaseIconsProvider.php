@@ -2,7 +2,6 @@
 
 namespace App\Providers\Filament;
 
-use App\Enums\Icons\Phosphor;
 use Filament\Actions\View\ActionsIconAlias;
 use Filament\Forms\View\FormsIconAlias;
 use Filament\Infolists\View\InfolistsIconAlias;
@@ -14,6 +13,7 @@ use Filament\Tables\View\TablesIconAlias;
 use Filament\View\PanelsIconAlias;
 use Filament\Widgets\View\WidgetsIconAlias;
 use Illuminate\Support\ServiceProvider;
+use ToneGabes\Filament\Icons\Enums\Phosphor;
 
 final class BaseIconsProvider extends ServiceProvider
 {

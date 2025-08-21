@@ -4,7 +4,7 @@
         "Read more about it at https://getcomposer.org/doc/01-basic-usage.md#installing-dependencies",
         "This file is @generated automatically"
     ],
-    "content-hash": "545afb5281206fa47a11adab9d37da2d",
+    "content-hash": "6f89bd4eb3622eb4624900b17eda999b",
     "packages": [
         {
             "name": "anourvalar/eloquent-serialize",
@@ -8300,6 +8300,61 @@
                 "source": "https://github.com/tijsverkoyen/CssToInlineStyles/tree/v2.3.0"
             },
             "time": "2024-12-21T16:25:41+00:00"
+        },
+        {
+            "name": "tonegabes/filament-phosphor-icons",
+            "version": "1.0.0",
+            "source": {
+                "type": "git",
+                "url": "https://github.com/tonegabes/filament-phosphor-icons.git",
+                "reference": "cf4594a6c8a164f625b0014f8e56f15c44847437"
+            },
+            "dist": {
+                "type": "zip",
+                "url": "https://api.github.com/repos/tonegabes/filament-phosphor-icons/zipball/cf4594a6c8a164f625b0014f8e56f15c44847437",
+                "reference": "cf4594a6c8a164f625b0014f8e56f15c44847437",
+                "shasum": ""
+            },
+            "require": {
+                "codeat3/blade-phosphor-icons": "^2.3",
+                "filament/filament": "^4.0",
+                "php": "^8.1"
+            },
+            "require-dev": {
+                "laravel/pint": "^1.22"
+            },
+            "type": "library",
+            "autoload": {
+                "psr-4": {
+                    "ToneGabes\\Filament\\Icons\\": "src/"
+                }
+            },
+            "notification-url": "https://packagist.org/downloads/",
+            "license": [
+                "MIT"
+            ],
+            "authors": [
+                {
+                    "name": "Tone Gabes",
+                    "email": "tonegabes@gmail.com",
+                    "homepage": "https://tonegabes.com",
+                    "role": "Developer"
+                }
+            ],
+            "description": "Phosphor Icons Pack ready for Filament 4",
+            "keywords": [
+                "Iconset",
+                "Phosphor",
+                "filament",
+                "icons",
+                "laravel",
+                "library"
+            ],
+            "support": {
+                "issues": "https://github.com/tonegabes/filament-phosphor-icons/issues",
+                "source": "https://github.com/tonegabes/filament-phosphor-icons/tree/1.0.0"
+            },
+            "time": "2025-08-21T16:13:48+00:00"
         },
         {
             "name": "ueberdosis/tiptap-php",

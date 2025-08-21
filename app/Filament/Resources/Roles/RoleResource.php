@@ -2,7 +2,6 @@
 
 namespace App\Filament\Resources\Roles;
 
-use App\Enums\Icons\Phosphor;
 use App\Enums\NavGroups;
 use App\Filament\Resources\Roles\Pages\CreateRole;
 use App\Filament\Resources\Roles\Pages\EditRole;
@@ -14,6 +13,7 @@ use BackedEnum;
 use Filament\Resources\Resource;
 use Filament\Schemas\Schema;
 use Filament\Tables\Table;
+use ToneGabes\Filament\Icons\Enums\Phosphor;
 
 class RoleResource extends Resource
 {

@@ -2,7 +2,6 @@
 
 namespace App\Providers\Filament;
 
-use App\Enums\Icons\Phosphor;
 use App\Enums\NavGroups;
 use App\Enums\Permissions\SystemPermissions;
 use App\Filament\Pages\Auth\Login;
@@ -26,6 +25,7 @@ use Illuminate\Routing\Middleware\SubstituteBindings;
 use Illuminate\Session\Middleware\StartSession;
 use Illuminate\Support\Facades\Config;
 use Illuminate\View\Middleware\ShareErrorsFromSession;
+use ToneGabes\Filament\Icons\Enums\Phosphor;
 
 class AdminPanelProvider extends PanelProvider
 {

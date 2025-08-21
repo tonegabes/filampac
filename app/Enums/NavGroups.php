@@ -4,9 +4,9 @@ declare(strict_types=1);
 
 namespace App\Enums;
 
-use App\Enums\Icons\Phosphor;
 use Filament\Support\Contracts\HasIcon;
 use Filament\Support\Contracts\HasLabel;
+use ToneGabes\Filament\Icons\Enums\Phosphor;
 
 enum NavGroups: string implements HasIcon, HasLabel
 {

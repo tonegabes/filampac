@@ -19,7 +19,8 @@
     "laravel/framework": "^12.0",
     "laravel/tinker": "^2.10.1",
     "opcodesio/log-viewer": "^3.19",
-    "spatie/laravel-permission": "^6.21"
+    "spatie/laravel-permission": "^6.21",
+    "tonegabes/filament-phosphor-icons": "^1.0"
   },
   "require-dev": {
     "fakerphp/faker": "^1.23",
