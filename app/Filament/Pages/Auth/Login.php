@@ -25,10 +25,6 @@ use LdapRecord\Models\ActiveDirectory\User as LdapUser;
 
 class Login extends VendorLogin
 {
-    protected static string $layout = 'layouts.auth';
-
-    protected string $view = 'filament.pages.auth.login';
-
     private LdapAuthService $ldapAuthService;
 
     private LdapUserService $ldapUserService;
@@ -45,6 +41,25 @@ class Login extends VendorLogin
         }
     }
 
+    /**
+     * Override the default view to use the custom view.
+     */
+    public function getView(): string
+    {
+        return 'filament.pages.auth.login';
+    }
+
+    /**
+     * Override the default layout to use the custom layout.
+     */
+    public function getLayout(): string
+    {
+        return 'layouts.auth';
+    }
+
+    /**
+     * Override the default authentication logic to use the custom logic.
+     */
     public function authenticate(): ?LoginResponse
     {
         try {
@@ -91,6 +106,9 @@ class Login extends VendorLogin
         return app(LoginResponse::class);
     }
 
+    /**
+     * Check if the user is undertaking multi-factor authentication.
+     */
     public function checkMultiFactorAuthentication(Authenticatable $user): void
     {
         if (
@@ -176,6 +194,9 @@ class Login extends VendorLogin
         );
     }
 
+    /**
+     * Override the default form to use the custom form.
+     */
     public function form(Schema $schema): Schema
     {
         $loginComponent = $this->getEmailFormComponent();
@@ -192,6 +213,9 @@ class Login extends VendorLogin
             ]);
     }
 
+    /**
+     * Get the username form component.
+     */
     protected function getUsernameFormComponent(): Component
     {
         $emailDomain = $this->ldapAuthService->emailDomain;

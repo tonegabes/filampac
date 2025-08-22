@@ -43,3 +43,11 @@
 .fi-sidebar-item-active > .fi-sidebar-item-button {
   @apply bg-white drop-shadow dark:bg-gray-800;
 }
+
+.fi-simple-main-ctn {
+  @apply bg-amber-300;
+}
+
+.fi-simple-main {
+  @apply max-w-md mx-auto;
+}

@@ -6,6 +6,7 @@ use App\Enums\NavGroups;
 use App\Enums\Permissions\SystemPermissions;
 use App\Filament\Pages\Auth\Login;
 use App\Filament\Pages\Auth\Register;
+use App\Settings\SystemSettings;
 use Filament\Http\Middleware\Authenticate;
 use Filament\Http\Middleware\AuthenticateSession;
 use Filament\Http\Middleware\DisableBladeIconComponents;
@@ -31,13 +32,17 @@ class AdminPanelProvider extends PanelProvider
 {
     public function panel(Panel $panel): Panel
     {
+        $panel = $this->configureRegistration($panel);
+
         return $panel
             ->default()
             ->id('admin')
             ->path('admin')
             ->login(Login::class)
-            ->registration(Register::class)
             ->profile()
+            ->brandName(app(SystemSettings::class)->app_name)
+            ->unsavedChangesAlerts()
+            ->strictAuthorization()
             ->colors([
                 'primary' => Color::Indigo,
             ])
@@ -63,6 +68,8 @@ class AdminPanelProvider extends PanelProvider
             ])
             ->navigationGroups([
                 NavigationGroup::make(NavGroups::Authorization->value)
+                    ->collapsed(true),
+                NavigationGroup::make(NavGroups::Settings->value)
                     ->collapsed(true),
                 NavigationGroup::make(NavGroups::Tools->value)
                     ->collapsed(true),
@@ -90,5 +97,35 @@ class AdminPanelProvider extends PanelProvider
                 Authenticate::class,
             ])
             ->plugins([]);
+    }
+
+    /**
+     * Configure the registration page.
+     */
+    private function configureRegistration(Panel $panel): Panel
+    {
+        if (Config::boolean('auth.ldap.enabled')) {
+            return $panel;
+        }
+
+        $canRegister = false;
+
+        try {
+            $canRegister = app(SystemSettings::class)->enable_registration;
+        } catch (\Spatie\LaravelSettings\Exceptions\MissingSettings $e) {
+            return $panel;
+        } catch (\Illuminate\Database\QueryException $e) {
+            return $panel;
+        } catch (\Exception $e) {
+            throw $e;
+        }
+
+        if ($canRegister) {
+            $panel->registration(Register::class)
+                // ->passwordReset(PasswordReset::class) // TODO: Add password reset page
+            ;
+        }
+
+        return $panel;
     }
 }

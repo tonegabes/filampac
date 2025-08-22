@@ -3,7 +3,7 @@
 return [
     'title' => 'Login',
 
-    'heading' => 'Entre',
+    'heading' => 'Entrar',
 
     'actions' => [
 

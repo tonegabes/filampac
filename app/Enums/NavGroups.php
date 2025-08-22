@@ -12,6 +12,7 @@ enum NavGroups: string implements HasIcon, HasLabel
 {
     case Authorization = 'Autorização';
     case Tools = 'Ferramentas';
+    case Settings = 'Configurações';
 
     public function getLabel(): string
     {
@@ -22,7 +23,8 @@ enum NavGroups: string implements HasIcon, HasLabel
     {
         return match ($this) {
             self::Authorization => (string) Phosphor::ShieldCheck->value,
-            self::Tools         => (string) Phosphor::Gear->value,
+            self::Tools         => (string) Phosphor::Wrench->value,
+            self::Settings      => (string) Phosphor::Gear->value,
         };
     }
 }

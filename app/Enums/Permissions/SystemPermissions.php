@@ -10,4 +10,5 @@ enum SystemPermissions: string
     case PanelsViewAdmin = 'system.panels.view.admin';
     case PanelsViewOperator = 'system.panels.view.operator';
     case LogViewerAccess = 'system.log-viewer.access';
+    case SystemSettingsManage = 'system.settings.manage';
 }
