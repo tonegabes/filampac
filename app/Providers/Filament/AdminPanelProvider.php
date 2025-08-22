@@ -2,6 +2,7 @@
 
 namespace App\Providers\Filament;
 
+use Agencetwogether\HooksHelper\HooksHelperPlugin;
 use App\Enums\NavGroups;
 use App\Enums\Permissions\SystemPermissions;
 use App\Filament\Pages\Auth\Login;
@@ -40,9 +41,9 @@ class AdminPanelProvider extends PanelProvider
             ->path('admin')
             ->login(Login::class)
             ->profile()
-            ->brandName(app(SystemSettings::class)->app_name)
+            ->brandLogo(fn () => view('components.brand-logo'))
             ->unsavedChangesAlerts()
-            ->strictAuthorization()
+            ->sidebarCollapsibleOnDesktop()
             ->colors([
                 'primary' => Color::Indigo,
             ])
@@ -96,7 +97,9 @@ class AdminPanelProvider extends PanelProvider
             ->authMiddleware([
                 Authenticate::class,
             ])
-            ->plugins([]);
+            ->plugins([
+                HooksHelperPlugin::make(),
+            ]);
     }
 
     /**
