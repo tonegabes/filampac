@@ -1,0 +1,7 @@
+.fi-simple-main-ctn {
+  @apply bg-amber-300;
+}
+
+.fi-simple-main {
+  @apply max-w-md mx-auto;
+}
