@@ -98,7 +98,7 @@ class AdminPanelProvider extends PanelProvider
                 Authenticate::class,
             ])
             ->plugins([
-                HooksHelperPlugin::make(),
+                // HooksHelperPlugin::make(), // Usar apenas quando necessário
             ]);
     }
 
